@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #042400;
+}
+
+.socials {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.socials img {
+    width: 200px; /* Adjust size as needed */
+    margin-left: 10px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images {
+    position: absolute;
+    width: 600px; /* Adjust width as needed */
+    height: 600px; /* Adjust height as needed */
+    animation: spin 10s linear infinite; /* Animation for spinning */
+}
+
+.hover-image {
+    position: absolute; /* Position images absolutely */
+    width: 200px; /* Adjust size as needed */
+    transition: transform 0.3s;
+}
+
+.hover-image:hover {
+    transform: scale(1.1);
+}
+
+/* Position images in a circle */
+.hover-image:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.hover-image:nth-child(2) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.hover-image:nth-child(3) { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.hover-image:nth-child(4) { top: 50%; left: 0; transform: translate(-50%, -50%); }
+
+.audio-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative; /* Keep the button centered */
+    z-index: 10; /* Bring button above the images */
+}
+
+.audio-button img {
+    width: 400px; /* Adjust size as needed */
+    transition: transform 0.3s;
+}
+
+.audio-button:hover img {
+    transform: scale(1.1);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
